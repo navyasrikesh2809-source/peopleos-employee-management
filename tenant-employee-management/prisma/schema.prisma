@@ -8,18 +8,100 @@ datasource db {
   directUrl = env("DIRECT_URL")
 }
 
-enum OrganizationStatus { ACTIVE SUSPENDED }
-enum MembershipRole { OWNER ADMIN MANAGER EMPLOYEE }
-enum MembershipStatus { ACTIVE INVITED SUSPENDED }
-enum EmployeeStatus { ACTIVE ON_LEAVE TERMINATED PROBATION }
-enum EmploymentType { FULL_TIME PART_TIME CONTRACT INTERN }
-enum InvitationStatus { PENDING ACCEPTED EXPIRED REVOKED }
-enum LeaveStatus { PENDING APPROVED REJECTED CANCELLED }
-enum LeaveType { ANNUAL SICK CASUAL MATERNITY PATERNITY UNPAID OTHER }
-enum AttendanceStatus { PRESENT ABSENT HALF_DAY WORK_FROM_HOME ON_LEAVE }
-enum PayrollStatus { DRAFT PROCESSING PAID FAILED }
-enum NotificationType { INVITATION LEAVE_REQUEST LEAVE_APPROVED LEAVE_REJECTED PAYSLIP GENERAL }
-enum AuditAction { CREATE UPDATE DELETE LOGIN LOGOUT INVITE ROLE_CHANGE APPROVE REJECT EXPORT }
+
+enum OrganizationStatus {
+  ACTIVE
+  SUSPENDED
+}
+
+enum MembershipRole {
+  OWNER
+  ADMIN
+  MANAGER
+  EMPLOYEE
+}
+
+enum MembershipStatus {
+  ACTIVE
+  INVITED
+  SUSPENDED
+}
+
+enum EmployeeStatus {
+  ACTIVE
+  ON_LEAVE
+  TERMINATED
+  PROBATION
+}
+
+enum EmploymentType {
+  FULL_TIME
+  PART_TIME
+  CONTRACT
+  INTERN
+}
+
+enum InvitationStatus {
+  PENDING
+  ACCEPTED
+  EXPIRED
+  REVOKED
+}
+
+enum LeaveStatus {
+  PENDING
+  APPROVED
+  REJECTED
+  CANCELLED
+}
+
+enum LeaveType {
+  ANNUAL
+  SICK
+  CASUAL
+  MATERNITY
+  PATERNITY
+  UNPAID
+  OTHER
+}
+
+enum AttendanceStatus {
+  PRESENT
+  ABSENT
+  HALF_DAY
+  WORK_FROM_HOME
+  ON_LEAVE
+}
+
+enum PayrollStatus {
+  DRAFT
+  PROCESSING
+  PAID
+  FAILED
+}
+
+enum NotificationType {
+  INVITATION
+  LEAVE_REQUEST
+  LEAVE_APPROVED
+  LEAVE_REJECTED
+  PAYSLIP
+  GENERAL
+}
+
+enum AuditAction {
+  CREATE
+  UPDATE
+  DELETE
+  LOGIN
+  LOGOUT
+  INVITE
+  ROLE_CHANGE
+  APPROVE
+  REJECT
+  EXPORT
+}
+
 
 model User {
   id             String       @id @default(uuid()) @db.Uuid
